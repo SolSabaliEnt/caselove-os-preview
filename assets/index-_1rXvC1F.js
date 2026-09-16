@@ -39,4 +39,67 @@ Error generating stack: `+e.message+`
         <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"></path>
         <path d="M10 21h4"></path>
       </svg>
-    `),n.dataset.count=String(Ce()===`done`?0:1)}},u=``,d=()=>{let e=document.querySelector(`.os-mobile-header > div > span`)?.textContent?.trim()??``;e&&e!==u&&(u=e,n())},f=[`.os-bottom-nav button`,`.os-sidebar nav button`,`.os-brand`,`.os-header-back`,`.os-back-button`,`.os-destination-link`,`.os-project-card`,`.clarity-client-row`,`.clarity-person-card`].join(`, `),p=e=>{let t=e.target;if(!t)return;if(t.closest(`.os-notification-trigger`)){e.preventDefault(),e.stopImmediatePropagation(),a();return}if(t.closest(`.os-notification-close`)){o();return}let r=t.closest(`.os-notification-panel`);if(r&&t===r){o();return}let s=t.closest(`[data-nudge-action]`)?.dataset.nudgeAction;if(s){localStorage.setItem(xe,s),i();return}t.closest(f)&&n()},m=()=>{e(),d(),l(),c()};e(),n(),m(),i(),document.addEventListener(`click`,p,!0);let h=new MutationObserver(()=>{m()});return h.observe(document.body,{childList:!0,subtree:!0,characterData:!0}),()=>{document.removeEventListener(`click`,p,!0),h.disconnect(),document.querySelector(`.os-notification-panel`)?.remove()}},[]),(0,b.jsx)(ve,{})}v.createRoot(document.getElementById(`root`)).render((0,b.jsx)(_.StrictMode,{children:(0,b.jsx)(Te,{})}));
+    `),n.dataset.count=String(Ce()===`done`?0:1)}},u=``,d=()=>{let e=document.querySelector(`.os-mobile-header > div > span`)?.textContent?.trim()??``;e&&e!==u&&(u=e,n())},f=[`.os-bottom-nav button`,`.os-sidebar nav button`,`.os-brand`,`.os-header-back`,`.os-back-button`,`.os-destination-link`,`.os-project-card`,`.clarity-client-row`,`.clarity-person-card`].join(`, `),p=e=>{let t=e.target;if(!t)return;if(t.closest(`.os-notification-trigger`)){e.preventDefault(),e.stopImmediatePropagation(),a();return}if(t.closest(`.os-notification-close`)){o();return}let r=t.closest(`.os-notification-panel`);if(r&&t===r){o();return}let s=t.closest(`[data-nudge-action]`)?.dataset.nudgeAction;if(s){localStorage.setItem(xe,s),i();return}t.closest(f)&&n()},m=()=>{e(),d(),l(),c()};e(),n(),m(),i(),document.addEventListener(`click`,p,!0);let h=new MutationObserver(()=>{m()});return h.observe(document.body,{childList:!0,subtree:!0,characterData:!0}),()=>{document.removeEventListener(`click`,p,!0),h.disconnect(),document.querySelector(`.os-notification-panel`)?.remove()}},[]),(0,b.jsx)(ve,{})}var Ee=[`Casey Love`,`Kalen`,`Crystal`,`Robert`],De=`caselove.profileImages`,Oe=`caselove.profileData`,ke={"Casey Love":{displayName:`Casey Love`,role:`Founder / Executive Producer`,status:`Available for founder decisions`,focus:`Client relationships, creative approval, pricing, and final authority`,availability:`Protected blocks + founder decisions`,authority:`Final pricing, relationship, creative approval`,trust:`Founder`,capabilities:`Client relationships, Creative direction, Pricing, Final approval`,workingStyle:`Protect relationship time and keep routine operating aftermath out of the founder path.`,communication:`Surface exceptions, real decisions, and relationship-sensitive changes. Keep routine movement quiet.`,visibility:`Private by default for personal detail; availability can shape the company plan without exposing context.`},Kalen:{displayName:`Kalen`,role:`Production + Business Development`,status:`Available for operating support`,focus:`Production, business development, follow-up, and delegated stewardship`,availability:`Available for operating support`,authority:`Calendar, routine follow-up, delegated coordination`,trust:`Steward access`,capabilities:`Video, Photography, Sales, Marketing, Business thinking, Stewardship`,workingStyle:`Move routine coordination forward and escalate when delegated authority is exceeded.`,communication:`Needs enough context to act without turning every change into a founder interruption.`,visibility:`Steward-assisted access where explicitly granted.`},Crystal:{displayName:`Crystal`,role:`Production + Process`,status:`Production + process capacity`,focus:`Production execution, creative process, and operational improvement`,availability:`Production + process capacity`,authority:`Production execution + process recommendations`,trust:`Team authority`,capabilities:`Video, Photography, Directing, Creative direction, Process design`,workingStyle:`Own production execution and strengthen repeatable process around the work.`,communication:`Surface blockers, handoffs, and process changes that affect production readiness.`,visibility:`Company operating information within assigned work.`},Robert:{displayName:`Robert`,role:`Systems + Product`,status:`Systems + production capacity`,focus:`Systems, product implementation, production support, and operating infrastructure`,availability:`Systems + production capacity`,authority:`Systems design + product implementation`,trust:`Team authority`,capabilities:`Video, Photography, Editing, Design, Systems, Product development`,workingStyle:`Turn operating needs into systems, product behavior, and reusable structure.`,communication:`Needs clear operating intent, edge cases, and decision ownership before implementation.`,visibility:`Company operating information required for systems and product work.`}};function Ae(e){return!!e&&Ee.includes(e)}function je(){try{return JSON.parse(localStorage.getItem(De)||`{}`)}catch{return{}}}function Me(){try{return JSON.parse(localStorage.getItem(Oe)||`{}`)}catch{return{}}}function Ne(e){return{...ke[e],...Me()[e]||{}}}function Pe(e){return e.split(` `).map(e=>e[0]).join(``).slice(0,2).toUpperCase()}function Fe(e,t){let n=je()[e];return n?`<div class="${t}" data-profile-avatar="${e}"><img src="${n}" alt="${e}" /></div>`:`<div class="${t}" data-profile-avatar="${e}">${Pe(e)}</div>`}function Ie(e){return e.replace(/&/g,`&amp;`).replace(/"/g,`&quot;`).replace(/</g,`&lt;`).replace(/>/g,`&gt;`)}function Le(e,t,n,r=``,i=!1){return`<div class="os-profile-field"><label>${e}</label>${i?`<textarea data-profile-field="${t}">${n.replace(/&/g,`&amp;`).replace(/</g,`&lt;`).replace(/>/g,`&gt;`)}</textarea>`:`<input data-profile-field="${t}" value="${Ie(n)}" />`}${r?`<small class="os-profile-field-hint">${r}</small>`:``}</div>`}function Re(){let e=`Casey Love`,t=null,n=!1,r=()=>{let e=document.querySelector(`.os-profile-workspace`);return e||(e=document.createElement(`div`),e.className=`os-profile-workspace`,e.setAttribute(`aria-hidden`,`true`),document.body.appendChild(e),e)},i=t=>{e=t;let n=Ne(t),i=r(),a=n.capabilities.split(`,`).map(e=>e.trim()).filter(Boolean).map(e=>`<span>${e}</span>`).join(``);i.innerHTML=`
+      <div class="os-profile-workspace-inner">
+        <div class="os-profile-workspace-nav">
+          <button type="button" data-profile-close>← Back</button>
+          <span>Personal operating profile</span>
+        </div>
+        <section class="os-profile-hero">
+          <div class="os-profile-workspace-photo" data-profile-photo>
+            ${je()[t]?`<img src="${je()[t]}" alt="${t}" />`:Pe(t)}
+            <label class="os-profile-photo-control">Change photo<input type="file" accept="image/*" data-profile-photo-input /></label>
+          </div>
+          <div class="os-profile-hero-copy">
+            <span>Your place in Caselove</span>
+            <h1>${n.displayName}</h1>
+            <p>${n.role}</p>
+            <span class="os-profile-hero-status">${n.status}</span>
+          </div>
+        </section>
+
+        <section class="os-profile-section">
+          <div class="os-profile-section-head"><div><span>Identity</span><h2>Make this profile yours.</h2></div><small>Your role can be specific to how you actually contribute, not forced into a generic company title.</small></div>
+          <div class="os-profile-form-grid two-col">
+            ${Le(`Preferred name`,`displayName`,n.displayName)}
+            ${Le(`Role / title`,`role`,n.role,`Use the language that best describes your real contribution.`)}
+            ${Le(`Current status`,`status`,n.status,`What should teammates understand about your availability right now?`)}
+            ${Le(`Operating focus`,`focus`,n.focus,`The work you are primarily here to move.`)}
+          </div>
+        </section>
+
+        <section class="os-profile-section">
+          <div class="os-profile-section-head"><div><span>How you operate</span><h2>Capability + authority + trust.</h2></div><small>This is what tells Caselove OS what you can own without unnecessary escalation.</small></div>
+          <div class="os-profile-form-grid">
+            ${Le(`Capabilities`,`capabilities`,n.capabilities,`Comma-separated. These become the capability tags used across Team.`)}
+            <div class="os-profile-capability-list">${a}</div>
+            ${Le(`Availability`,`availability`,n.availability)}
+            ${Le(`Authority`,`authority`,n.authority,`What are you allowed to decide, change, approve, or move?`)}
+            ${Le(`Trust scope`,`trust`,n.trust,`What level of delegated trust applies to your work?`)}
+          </div>
+        </section>
+
+        <section class="os-profile-section">
+          <div class="os-profile-section-head"><div><span>Working preferences</span><h2>Help the system work the way you do.</h2></div><small>These preferences should shape handoffs and attention without creating another activity feed.</small></div>
+          <div class="os-profile-form-grid">
+            ${Le(`Working style`,`workingStyle`,n.workingStyle,`How do you do your best work?`,!0)}
+            ${Le(`Communication + interruption`,`communication`,n.communication,`What should rise immediately, and what can stay quiet?`,!0)}
+            ${Le(`Visibility + privacy`,`visibility`,n.visibility,`What context should others see, and at what level?`,!0)}
+          </div>
+        </section>
+
+        <div class="os-profile-savebar">
+          <span data-profile-save-state>Changes stay on this device until saved.</span>
+          <button class="os-primary" type="button" data-profile-save>Save profile</button>
+        </div>
+      </div>
+    `,i.classList.add(`is-open`),i.setAttribute(`aria-hidden`,`false`),i.scrollTop=0},a=()=>{let e=document.querySelector(`.os-profile-workspace`);e?.classList.remove(`is-open`),e?.setAttribute(`aria-hidden`,`true`)},o=()=>{let e=Array.from(document.querySelectorAll(`.os-page-header`)).find(e=>e.querySelector(`h1`)?.textContent?.trim()===`More`),t=e?.closest(`.os-view`);if(!t||!e)return;t.classList.add(`has-profile-summary`);let n=t.querySelector(`:scope > .os-more-profile`),r=Ne(`Casey Love`),i=je()[`Casey Love`],a=JSON.stringify({profile:r,image:i});if(n?.dataset.signature===a)return;n||(n=document.createElement(`section`),n.className=`os-more-profile`,t.insertBefore(n,e)),n.dataset.signature=a;let o=r.focus.split(`,`).slice(0,4).map(e=>`<span>${e.trim()}</span>`).join(``);n.innerHTML=`
+      ${Fe(`Casey Love`,`os-more-profile-avatar`)}
+      <div class="os-more-profile-copy">
+        <span>Your profile</span>
+        <strong>${r.displayName}</strong>
+        <small>${r.role} · ${r.status}</small>
+        <div class="os-more-profile-tags">${o}</div>
+      </div>
+      <button class="os-more-profile-action" type="button" data-open-profile="Casey Love">View profile →</button>
+    `},s=()=>{let e=document.querySelector(`.os-detail-page .os-detail-hero`),t=e?.querySelector(`h1`)?.textContent?.trim();if(!e||!Ae(t))return;let n=e.closest(`.os-detail-page`)?.querySelector(`.os-detail-actions`);if(!n||n.querySelector(`[data-open-profile]`))return;let r=document.createElement(`button`);r.className=`os-secondary`,r.type=`button`,r.dataset.openProfile=t,r.textContent=`Open full profile`,n.prepend(r)},c=()=>{let e=Me();document.querySelectorAll(`.clarity-person-card`).forEach(t=>{let n=t.querySelector(`h2`)?.textContent?.trim();if(!Ae(n))return;let r={...ke[n],...e[n]||{}},i=t.querySelector(`.os-person-head p`);i&&(i.textContent=r.role);let a=t.querySelector(`.os-capabilities`);a&&(a.innerHTML=r.capabilities.split(`,`).map(e=>e.trim()).filter(Boolean).map(e=>`<span>${e}</span>`).join(``))})},l=()=>{n=!1,o(),s(),c()},u=()=>{n||(n=!0,requestAnimationFrame(l))},d=t=>{let n=t.target;if(!n)return;let r=n.closest(`[data-open-profile]`);if(r&&Ae(r.dataset.openProfile)){t.preventDefault(),i(r.dataset.openProfile);return}if(n.closest(`[data-profile-close]`)){a();return}if(n.closest(`[data-profile-save]`)){let t=document.querySelector(`.os-profile-workspace`);if(!t)return;let n={...Ne(e)};t.querySelectorAll(`[data-profile-field]`).forEach(e=>{let t=e.dataset.profileField;t&&(n[t]=e.value.trim())});let r=Me();r[e]=n,localStorage.setItem(Oe,JSON.stringify(r));let i=t.querySelector(`[data-profile-save-state]`);i&&(i.textContent=`Profile saved.`,i.classList.add(`is-saved`)),u();return}},f=t=>{let n=t.target;if(!n?.matches(`[data-profile-photo-input]`))return;let r=n.files?.[0];if(!r)return;let a=new FileReader;a.onload=()=>{if(typeof a.result!=`string`)return;let t=je();t[e]=a.result,localStorage.setItem(De,JSON.stringify(t)),i(e),u()},a.readAsDataURL(r)};return document.addEventListener(`click`,d),document.addEventListener(`change`,f),t=new MutationObserver(u),t.observe(document.body,{childList:!0,subtree:!0}),u(),()=>{document.removeEventListener(`click`,d),document.removeEventListener(`change`,f),t?.disconnect(),document.querySelector(`.os-profile-workspace`)?.remove()}}v.createRoot(document.getElementById(`root`)).render((0,b.jsx)(_.StrictMode,{children:(0,b.jsx)(Te,{})})),requestAnimationFrame(()=>{Re()});
